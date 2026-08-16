@@ -8,233 +8,269 @@
 
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/admin.css">
+
 </head>
 
 <body>
 
 <header class="admin-header">
-  <div class="admin-header-container">
 
-    <a href="admin.html" class="logo">
-      MK-WHOLESALERS
-      <span class="admin-tag">Admin</span>
-    </a>
+<div class="admin-header-container">
 
-    <nav class="admin-nav">
+<a href="admin.html" class="logo">
+MK-WHOLESALERS <span class="admin-tag">Admin</span>
+</a>
 
-      <a href="admin.html">
-        Dashboard
-      </a>
+<nav class="admin-nav">
 
-      <a href="admin-products.html">
-        Products
-      </a>
+<a href="admin.html">Dashboard</a>
 
-      <a href="admin-categories.html">
-        Categories
-      </a>
+<a href="admin-products.html">Products</a>
 
-      <a href="admin-settings.html">
-        Settings
-      </a>
+<a href="admin-categories.html">Categories</a>
 
-      <a href="index.html" class="back-to-site">
-        ← Back to Site
-      </a>
+<a href="admin-settings.html">Settings</a>
 
-      <button id="logout-btn" type="button">
-        Log Out
-      </button>
+<a href="index.html" class="back-to-site">
+← Back to Site
+</a>
 
-    </nav>
+<button id="logout-btn" type="button">
+Log Out
+</button>
 
-  </div>
+</nav>
+
+</div>
+
 </header>
 
 
 <main class="admin-main">
 
-  <section class="admin-page-header">
+<section class="admin-page-header">
 
-    <h1>Categories</h1>
+<h1>Categories</h1>
 
-    <button
-      id="add-category-btn"
-      class="btn btn-primary"
-      type="button"
-    >
-      + Add New Category
-    </button>
+<button
+id="add-category-btn"
+class="btn btn-primary"
+type="button"
+>
++ Add New Category
+</button>
 
-  </section>
-
-
-  <section class="admin-table-section">
-
-    <table class="admin-table">
-
-      <thead>
-
-        <tr>
-          <th>Image</th>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Sort Order</th>
-          <th>Status</th>
-          <th>Actions</th>
-        </tr>
-
-      </thead>
+</section>
 
 
-      <tbody id="admin-categories-tbody">
+<section class="admin-table-section">
 
-        <!-- Category rows loaded dynamically by js/admin.js -->
+<table class="admin-table">
 
-      </tbody>
+<thead>
 
-    </table>
+<tr>
 
+<th>Image</th>
 
-    <p
-      id="no-categories-message"
-      class="no-products-message"
-      style="display:none;"
-    >
-      No categories found.
-    </p>
+<th>Name</th>
 
-  </section>
+<th>Description</th>
 
+<th>Sort Order</th>
 
-  <!-- Add/Edit Category Modal -->
+<th>Status</th>
 
-  <div
-    id="category-modal"
-    class="admin-modal"
-    style="display:none;"
-  >
+<th>Actions</th>
 
-    <div class="admin-modal-content">
+</tr>
 
-      <h2 id="category-modal-title">
-        Add Category
-      </h2>
+</thead>
 
 
-      <form id="category-form">
+<tbody id="admin-categories-tbody">
 
-        <input
-          type="hidden"
-          id="category-id"
-          value=""
-        >
+<!-- Category rows loaded dynamically by js/admin.js
 
+<tr>
 
-        <label for="category-name">
-          Category Name
-        </label>
+<td>
+<img class="admin-thumb" src="" alt="">
+</td>
 
-        <input
-          type="text"
-          id="category-name"
-          required
-        >
+<td class="admin-category-name"></td>
 
+<td class="admin-category-description"></td>
 
-        <label for="category-description">
-          Description
-        </label>
+<td class="admin-category-sort"></td>
 
-        <textarea
-          id="category-description"
-          rows="3"
-        ></textarea>
+<td class="admin-category-status"></td>
 
+<td>
 
-        <label for="category-sort-order">
-          Sort Order
-        </label>
+<button class="btn btn-small edit-category-btn">
+Edit
+</button>
 
-        <input
-          type="number"
-          id="category-sort-order"
-          value="0"
-        >
+<button class="btn btn-small btn-danger delete-category-btn">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+-->
+
+</tbody>
+
+</table>
 
 
-        <label for="category-image">
-          Category Image
-        </label>
+<p
+id="no-categories-message"
+class="no-products-message"
+style="display:none;"
+>
+No categories found.
+</p>
 
-        <input
-          type="file"
-          id="category-image"
-          accept="image/*"
-        >
-
-
-        <img
-          id="category-image-preview"
-          class="image-preview"
-          src=""
-          alt=""
-          style="display:none;"
-        >
+</section>
 
 
-        <label class="checkbox-label">
+<!-- Add/Edit Category Modal -->
 
-          <input
-            type="checkbox"
-            id="category-active"
-            checked
-          >
+<div
+id="category-modal"
+class="admin-modal"
+style="display:none;"
+>
 
-          Active (visible to customers)
+<div class="admin-modal-content">
 
-        </label>
-
-
-        <p
-          id="category-form-error"
-          class="login-error"
-          style="display:none;"
-        ></p>
+<h2 id="category-modal-title">
+Add Category
+</h2>
 
 
-        <div class="admin-modal-actions">
+<form id="category-form">
 
-          <button
-            type="button"
-            id="category-cancel-btn"
-            class="btn btn-secondary"
-          >
-            Cancel
-          </button>
+<input
+type="hidden"
+id="category-id"
+value=""
+>
 
 
-          <button
-            type="submit"
-            class="btn btn-primary"
-          >
-            Save Category
-          </button>
+<label for="category-name">
+Category Name
+</label>
 
-        </div>
+<input
+type="text"
+id="category-name"
+required
+>
 
-      </form>
 
-    </div>
+<label for="category-description">
+Description
+</label>
 
-  </div>
+<textarea
+id="category-description"
+rows="3"
+></textarea>
+
+
+<label for="category-sort-order">
+Sort Order
+</label>
+
+<input
+type="number"
+id="category-sort-order"
+value="0"
+>
+
+
+<label for="category-image">
+Category Image
+</label>
+
+<input
+type="file"
+id="category-image"
+accept="image/*"
+>
+
+
+<img
+id="category-image-preview"
+class="image-preview"
+src=""
+alt=""
+style="display:none;"
+>
+
+
+<label class="checkbox-label">
+
+<input
+type="checkbox"
+id="category-active"
+checked
+>
+
+Active (visible to customers)
+
+</label>
+
+
+<p
+id="category-form-error"
+class="login-error"
+style="display:none;"
+></p>
+
+
+<div class="admin-modal-actions">
+
+<button
+type="button"
+id="category-cancel-btn"
+class="btn btn-secondary"
+>
+Cancel
+</button>
+
+
+<button
+type="submit"
+class="btn btn-primary"
+>
+Save Category
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
 
 </main>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script src="js/supabase.js"></script>
+
+<script src="js/supabase.js" defer></script>
+
 <script src="js/auth.js" defer></script>
+
 <script src="js/admin.js" defer></script>
 
 </body>
