@@ -5,263 +5,217 @@
 <meta charset="UTF-8">
 
 <meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
 >
 
-<title>
-Add / Edit Product | MK-WHOLESALERS Admin
-</title>
+<title>Add / Edit Product | MK-WHOLESALERS Admin</title>
 
 <link
-rel="stylesheet"
-href="css/style.css"
+  rel="stylesheet"
+  href="css/style.css"
 >
 
 <link
-rel="stylesheet"
-href="css/admin.css"
+  rel="stylesheet"
+  href="css/admin.css"
 >
 
 </head>
 
-
 <body>
-
 
 <header class="admin-header">
 
-<div class="admin-header-container">
+  <div class="admin-header-container">
 
+    <a
+      href="admin.html"
+      class="logo"
+    >
+      MK-WHOLESALERS
+      <span class="admin-tag">Admin</span>
+    </a>
 
-<a
-href="admin.html"
-class="logo"
->
-MK-WHOLESALERS
-<span class="admin-tag">Admin</span>
-</a>
+    <nav class="admin-nav">
 
+      <a href="admin.html">
+        Dashboard
+      </a>
 
-<nav class="admin-nav">
+      <a href="admin-products.html">
+        Products
+      </a>
 
+      <a href="admin-categories.html">
+        Categories
+      </a>
 
-<a href="admin.html">
-Dashboard
-</a>
+      <a href="admin-settings.html">
+        Settings
+      </a>
 
+      <a
+        href="index.html"
+        class="back-to-site"
+      >
+        ← Back to Site
+      </a>
 
-<a href="admin-products.html">
-Products
-</a>
+      <button
+        id="logout-btn"
+        type="button"
+      >
+        Log Out
+      </button>
 
+    </nav>
 
-<a href="admin-categories.html">
-Categories
-</a>
-
-
-<a href="admin-settings.html">
-Settings
-</a>
-
-
-<a
-href="index.html"
-class="back-to-site"
->
-← Back to Site
-</a>
-
-
-<button
-id="logout-btn"
-type="button"
->
-Log Out
-</button>
-
-
-</nav>
-
-</div>
+  </div>
 
 </header>
 
-
-
 <main class="admin-main">
 
+  <section class="admin-page-header">
 
-<section class="admin-page-header">
+    <h1 id="form-title">
+      Add New Product
+    </h1>
 
+    <a
+      href="admin-products.html"
+      class="btn btn-secondary"
+    >
+      &larr; Back to Products
+    </a>
 
-<h1 id="form-title">
-Add New Product
-</h1>
+  </section>
 
+  <section class="admin-form-section">
 
-<a
-href="admin-products.html"
-class="btn btn-secondary"
->
-&larr; Back to Products
-</a>
+    <form id="product-form">
 
+      <input
+        type="hidden"
+        id="product-id"
+        value=""
+      >
 
-</section>
+      <label for="product-name">
+        Product Name
+      </label>
 
+      <input
+        type="text"
+        id="product-name"
+        required
+      >
 
+      <label for="product-description">
+        Description
+      </label>
 
-<section class="admin-form-section">
+      <textarea
+        id="product-description"
+        rows="4"
+      ></textarea>
 
+      <label for="product-brand">
+        Brand
+      </label>
 
-<form id="product-form">
+      <input
+        type="text"
+        id="product-brand"
+      >
 
+      <label for="product-price">
+        Price (R)
+      </label>
 
-<input
-type="hidden"
-id="product-id"
-value=""
->
+      <input
+        type="number"
+        id="product-price"
+        step="0.01"
+        min="0"
+        required
+      >
 
+      <label for="product-unit">
+        Unit (e.g. per box, per kg)
+      </label>
 
-<label for="product-name">
-Product Name
-</label>
+      <input
+        type="text"
+        id="product-unit"
+      >
 
-<input
-type="text"
-id="product-name"
-required
->
+      <label for="product-category">
+        Category
+      </label>
 
+      <select
+        id="product-category"
+        required
+      >
+        <!-- Category options loaded dynamically by js/admin.js -->
+      </select>
 
-<label for="product-description">
-Description
-</label>
+      <label for="product-image">
+        Product Image
+      </label>
 
-<textarea
-id="product-description"
-rows="4"
-></textarea>
+      <input
+        type="file"
+        id="product-image"
+        accept="image/*"
+      >
 
+      <img
+        id="product-image-preview"
+        class="image-preview"
+        src=""
+        alt=""
+        style="display:none;"
+      >
 
-<label for="product-brand">
-Brand
-</label>
+      <label class="checkbox-label">
 
-<input
-type="text"
-id="product-brand"
->
+        <input
+          type="checkbox"
+          id="product-active"
+          checked
+        >
 
+        Active (visible to customers)
 
-<label for="product-price">
-Price (R)
-</label>
+      </label>
 
-<input
-type="number"
-id="product-price"
-step="0.01"
-min="0"
-required
->
+      <p
+        id="form-error"
+        class="login-error"
+        style="display:none;"
+      ></p>
 
+      <button
+        type="submit"
+        class="btn btn-primary"
+      >
+        Save Product
+      </button>
 
-<label for="product-unit">
-Unit (e.g. per box, per kg)
-</label>
+    </form>
 
-<input
-type="text"
-id="product-unit"
->
-
-
-<label for="product-category">
-Category
-</label>
-
-<select
-id="product-category"
-required
->
-
-<!-- Category options loaded dynamically by js/admin.js -->
-
-</select>
-
-
-<label for="product-image">
-Product Image
-</label>
-
-<input
-type="file"
-id="product-image"
-accept="image/*"
->
-
-
-<img
-id="product-image-preview"
-class="image-preview"
-src=""
-alt=""
-style="display:none;"
->
-
-
-<label class="checkbox-label">
-
-<input
-type="checkbox"
-id="product-active"
-checked
->
-
-Active (visible to customers)
-
-</label>
-
-
-<p
-id="form-error"
-class="login-error"
-style="display:none;"
-></p>
-
-
-<button
-type="submit"
-class="btn btn-primary"
->
-Save Product
-</button>
-
-
-</form>
-
-</section>
+  </section>
 
 </main>
 
-
-
-<script
-src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase.js"></script>
-
 <script src="js/supabase.js" defer></script>
-
 <script src="js/auth.js" defer></script>
-
 <script src="js/admin.js" defer></script>
-
 
 </body>
 </html>
