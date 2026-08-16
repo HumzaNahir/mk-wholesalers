@@ -31,10 +31,11 @@
 
   <section class="admin-filters">
     <input type="text" id="admin-product-search" placeholder="Search products...">
+
     <select id="admin-category-filter">
       <option value="">All Categories</option>
-      <!-- Category options loaded dynamically by js/admin.js -->
     </select>
+
     <select id="admin-status-filter">
       <option value="">All Status</option>
       <option value="active">Active</option>
@@ -54,31 +55,22 @@
           <th>Actions</th>
         </tr>
       </thead>
+
       <tbody id="admin-products-tbody">
-        <!-- Product rows loaded dynamically by js/admin.js
-        <tr>
-          <td><img class="admin-thumb" src="" alt=""></td>
-          <td class="admin-product-name"></td>
-          <td class="admin-product-category"></td>
-          <td class="admin-product-price"></td>
-          <td class="admin-product-status"></td>
-          <td>
-            <a class="btn btn-small" href="admin-product-form.html">Edit</a>
-            <button class="btn btn-small btn-danger delete-product-btn">Delete</button>
-          </td>
-        </tr>
-        -->
       </tbody>
     </table>
-    <p id="no-products-admin-message" class="no-products-message" style="display:none;">No products found.</p>
+
+    <p id="no-products-admin-message" class="no-products-message" style="display:none;">
+      No products found.
+    </p>
   </section>
 
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase.js"></script>
-<script src="js/supabase.js" defer></script>
 <script src="js/auth.js" defer></script>
 <script src="js/admin.js" defer></script>
+
 </body>
 </html>
