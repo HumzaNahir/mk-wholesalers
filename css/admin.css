@@ -308,3 +308,24 @@
   }
 
 }
+/* Back to Site button */
+.admin-nav .back-to-site {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  margin: 0 4px;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  background: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.admin-nav .back-to-site:hover {
+  background: #ffffff;
+  color: #000000;
+}
