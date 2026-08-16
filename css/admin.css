@@ -264,3 +264,47 @@
     padding: 20px;
   }
 }
+/* =========================================
+   BACK TO SITE BUTTON
+========================================= */
+
+.admin-nav .back-to-site {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 14px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+
+  background-color: #ffffff;
+  color: var(--color-primary);
+
+  text-decoration: none;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-nav .back-to-site:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+@media (max-width: 640px) {
+
+  .admin-nav .back-to-site {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+}
